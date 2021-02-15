@@ -15,10 +15,33 @@ MonoBehaviour:
   Path: Ensemble_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637489257047732941
+  lastModified: 637489369398752409
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-1806667801453161632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Title/FadeInTitle
+  m_EditorClassIdentifier: 
+  Path: event:/Title/FadeInTitle
+  guid: f13264311162a945a79f7eeb58d16e0e
+  Banks:
+  - {fileID: -5825487486647143694}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,13 +57,15 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 841487341321743884}
   - {fileID: -5825487486647143694}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: -1806667801453161632}
+  - {fileID: 3569842493339048182}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5825487486647143694}
   StringsBanks:
   - {fileID: 841487341321743884}
-  stringsBankWriteTime: 637489257047782575
+  stringsBankWriteTime: 637489369398856614
   cacheVersion: 6
 --- !u!114 &841487341321743884
 MonoBehaviour:
@@ -57,9 +82,32 @@ MonoBehaviour:
   Path: Ensemble_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637489257047782575
+  lastModified: 637489369398856614
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 700
+    Value: 810
   Exists: 1
+--- !u!114 &3569842493339048182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BG/Overworld
+  m_EditorClassIdentifier: 
+  Path: event:/BG/Overworld
+  guid: ec3682ea1f17224dbdfb8c9adab46c4a
+  Banks:
+  - {fileID: -5825487486647143694}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
