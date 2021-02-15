@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Ensemble_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637489369398752409
+  lastModified: 637489892652222473
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -65,7 +65,7 @@ MonoBehaviour:
   - {fileID: -5825487486647143694}
   StringsBanks:
   - {fileID: 841487341321743884}
-  stringsBankWriteTime: 637489369398856614
+  stringsBankWriteTime: 637489892652232473
   cacheVersion: 6
 --- !u!114 &841487341321743884
 MonoBehaviour:
@@ -82,7 +82,7 @@ MonoBehaviour:
   Path: Ensemble_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637489369398856614
+  lastModified: 637489892652232473
   LoadResult: 0
   FileSizes:
   - Name: Desktop
