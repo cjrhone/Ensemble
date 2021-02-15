@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World1_DrumWorld.unity
     guid: 9ceeb6ca6e1170d4b98791055898f98b
+  - enabled: 1
+    path: Assets/Scenes/Staging.unity
+    guid: f1ac562dcc463e6448b5c88e35cffde8
   m_configObjects: {}
