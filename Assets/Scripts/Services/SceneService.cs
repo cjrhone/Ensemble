@@ -19,8 +19,10 @@ public class SceneService : MonoBehaviour
     
     public void PlayButton(){
         //TODO: on first boot of game we would start with new game mode play,
-        // in subsequent play's we should should something else
+        // in subsequent play's we should should something 
+        
 
+        //TODO: add some flair here, make the transition look juicier
         //Load "first" scene
         SceneManager.LoadScene("Staging");
     }
