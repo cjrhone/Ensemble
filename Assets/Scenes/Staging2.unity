@@ -913,6 +913,36 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 916514640}
+    - target: {fileID: 950239697955714718, guid: 07a4c5d7079640649af9f556fbf63259,
+        type: 3}
+      propertyPath: m_XAxis.m_MaxSpeed
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 950239697955714718, guid: 07a4c5d7079640649af9f556fbf63259,
+        type: 3}
+      propertyPath: m_YAxis.m_MaxSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 950239697955714718, guid: 07a4c5d7079640649af9f556fbf63259,
+        type: 3}
+      propertyPath: m_YAxis.m_AccelTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 950239697955714718, guid: 07a4c5d7079640649af9f556fbf63259,
+        type: 3}
+      propertyPath: m_Orbits.Array.data[0].m_Height
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 950239697955714718, guid: 07a4c5d7079640649af9f556fbf63259,
+        type: 3}
+      propertyPath: m_Orbits.Array.data[2].m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 950239697955714718, guid: 07a4c5d7079640649af9f556fbf63259,
+        type: 3}
+      propertyPath: m_Orbits.Array.data[2].m_Radius
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 950239697955714719, guid: 07a4c5d7079640649af9f556fbf63259,
         type: 3}
       propertyPath: m_RootOrder

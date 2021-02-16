@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
 // Most of the movement and camera related code was based off Brackeys' 
 // 3rd Person Movement tutorial here: https://youtu.be/4HpC--2iowE
 public class PlayerController : MonoBehaviour
