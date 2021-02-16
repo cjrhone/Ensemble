@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+// Most of the movement and camera related code was based off Brackeys' 
+// 3rd Person Movement tutorial here: https://youtu.be/4HpC--2iowE
 public class PlayerController : MonoBehaviour
 {
     [Header("Basic Player Controls Parameters")]
+
+    public Transform playerCamera;
 
     [SerializeField]
     private CharacterController _characterController;
 
     [SerializeField]
     private float _playerSpeed = 6f;
+
+    [SerializeField]
+    private float _turnSmoothTimeSeconds = 0.1f;
 
     [Header("Skill Parameters")]
 
@@ -28,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private bool _dashAvailable;
     private bool _dashing;
     private float _dashStartTime;
+    private float _turnSmoothVelocity;
 
     public event Action OnDashAvailable;
     public event Action OnDashUnavailable;
@@ -42,11 +50,24 @@ public class PlayerController : MonoBehaviour
     {
         var horizontal = Input.GetAxisRaw("Horizontal");
         var vertical = Input.GetAxisRaw("Vertical");
+        var inputDirection = new Vector3(horizontal, 0f, vertical).normalized;
+
         if(!_dashing) {
-            _direction = new Vector3(horizontal, 0f, vertical).normalized;
+            var targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) 
+                * Mathf.Rad2Deg
+                + playerCamera.eulerAngles.y;
+            var angle = Mathf.SmoothDampAngle(
+                transform.eulerAngles.y,
+                targetAngle,
+                ref _turnSmoothVelocity,
+                _turnSmoothTimeSeconds);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            _direction = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            _direction = _direction.normalized;
         }
 
-        if(_direction.magnitude >= 0.1f && !_dashing) {
+        if(inputDirection.magnitude >= 0.1f && !_dashing) {
+
             if(Input.GetButtonDown("Dash") && _dashAvailable){
                 StartDash();
             } else {
