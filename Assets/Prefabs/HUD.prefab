@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3164300113847995535}
   - component: {fileID: 3164300113847995534}
+  - component: {fileID: 2004583302}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerController: {fileID: 0}
   DashIcon: {fileID: 3164300113975200260}
+--- !u!114 &2004583302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3164300113847995529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b260a9fb0d7ca14087f705a8ddfe3a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorArrow: {fileID: 2800000, guid: ab6cdcf3d36ed114ea27a35a00dfce45, type: 3}
 --- !u!1 &3164300113975200256
 GameObject:
   m_ObjectHideFlags: 0
