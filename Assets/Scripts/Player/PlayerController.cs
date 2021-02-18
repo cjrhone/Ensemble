@@ -66,20 +66,13 @@ public class PlayerController : MonoBehaviour
 
         _direction.y -= _gravity * Time.deltaTime;
 
-        
-        // if(!_dashing) {
-        //     var targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) 
-        //         * Mathf.Rad2Deg
-        //         + playerCamera.eulerAngles.y;
-        //     var angle = Mathf.SmoothDampAngle(
-        //         transform.eulerAngles.y,
-        //         targetAngle,
-        //         ref _turnSmoothVelocity,
-        //         _turnSmoothTimeSeconds);
-        //     transform.rotation = Quaternion.Euler(0f, angle, 0f);
-        //     _direction = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-        //     _direction = _direction.normalized;
-        // }
+        RaycastHit hit;
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        var mouseHit = Physics.Raycast(ray, out hit);
+
+        if(!_dashing && mouseHit) {
+            transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+        }
 
         if(/*inputDirection.magnitude >= 0.1f &&*/ !_dashing) {
 
