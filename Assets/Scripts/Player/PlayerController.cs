@@ -74,7 +74,9 @@ public class PlayerController : MonoBehaviour
         var mouseHit = Physics.Raycast(ray, out hit);
 
         if(!_dashing && mouseHit) {
-            transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+            var lookAtThis = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+            Debug.DrawLine(ray.origin, lookAtThis, Color.yellow);
+            transform.LookAt(lookAtThis);
         }
 
         if(/*inputDirection.magnitude >= 0.1f &&*/ !_dashing) {
