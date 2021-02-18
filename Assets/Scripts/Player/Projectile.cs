@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour
     private float maxProjectileDistance;
 
     private GameObject triggeringEnemy;
+    // private GameObject player;
     public float damage;
 
     void Start() 
@@ -46,5 +47,10 @@ public class Projectile : MonoBehaviour
             Destroy(this.gameObject);
             
         }
+
+        // if(other.tag == "Player")
+        // {
+        //     Destroy(player);
+        // }
     }
 }

@@ -9,13 +9,41 @@ public class Enemy : MonoBehaviour
     public float pointsToGive;
 
     public GameObject player;
+    public GameObject bullet;
+    public GameObject bulletSpawnPoint;
+    private Transform bulletSpawned;
+
+    public float waitTime;
+
+    private float currentTime;
+
+    private bool shot;
 
     //Methods
+
     public void Update()
     {
         if(health <= 0)
         {
             Die();
+        }
+
+        this.transform.LookAt(player.transform);
+
+        if(currentTime == 0)
+        {
+            Shoot();
+
+        }
+
+        if(shot && currentTime < waitTime)
+        {
+            currentTime += 1 * Time.deltaTime;
+        }
+
+        if (currentTime >= waitTime)
+        {
+            currentTime = 0;
         }
     }
 
@@ -25,6 +53,15 @@ public class Enemy : MonoBehaviour
         Destroy(this.gameObject);
 
         player.GetComponent<PlayerController>().points += pointsToGive;
+    }
+
+    public void Shoot()
+    {
+        shot = true;
+        
+        bulletSpawned = Instantiate(bullet.transform, bulletSpawnPoint.transform.position, Quaternion.identity);
+        bulletSpawned.rotation = this.transform.rotation;
+
     }
 
 }

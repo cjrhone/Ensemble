@@ -126,4 +126,9 @@ public class PlayerController : MonoBehaviour
         _dashAvailable = true;
         OnDashAvailable?.Invoke();
     }
+
+    public void Die()
+    {
+        print("You've died");
+    }
 }
