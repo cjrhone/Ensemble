@@ -31,6 +31,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _dashCooldownSeconds = 2.0f;
 
+    [SerializeField]
+    private float _gravity = 9.81f;
+
+    [SerializeField]
+    private float _jumpSpeed = 3.5f;
+
     private Vector3 _direction;
     private bool _dashAvailable;
     private bool _dashing;
@@ -51,22 +57,31 @@ public class PlayerController : MonoBehaviour
         var horizontal = Input.GetAxisRaw("Horizontal");
         var vertical = Input.GetAxisRaw("Vertical");
         var inputDirection = new Vector3(horizontal, 0f, vertical).normalized;
+        _direction.x = inputDirection.x;
+        _direction.z = inputDirection.z;
 
-        if(!_dashing) {
-            var targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) 
-                * Mathf.Rad2Deg
-                + playerCamera.eulerAngles.y;
-            var angle = Mathf.SmoothDampAngle(
-                transform.eulerAngles.y,
-                targetAngle,
-                ref _turnSmoothVelocity,
-                _turnSmoothTimeSeconds);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-            _direction = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            _direction = _direction.normalized;
+        if (_characterController.isGrounded && !_dashing && Input.GetButtonDown("Jump") ){
+            _direction.y = _jumpSpeed;
         }
 
-        if(inputDirection.magnitude >= 0.1f && !_dashing) {
+        _direction.y -= _gravity * Time.deltaTime;
+
+        
+        // if(!_dashing) {
+        //     var targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) 
+        //         * Mathf.Rad2Deg
+        //         + playerCamera.eulerAngles.y;
+        //     var angle = Mathf.SmoothDampAngle(
+        //         transform.eulerAngles.y,
+        //         targetAngle,
+        //         ref _turnSmoothVelocity,
+        //         _turnSmoothTimeSeconds);
+        //     transform.rotation = Quaternion.Euler(0f, angle, 0f);
+        //     _direction = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+        //     _direction = _direction.normalized;
+        // }
+
+        if(/*inputDirection.magnitude >= 0.1f &&*/ !_dashing) {
 
             if(Input.GetButtonDown("Dash") && _dashAvailable){
                 StartDash();
