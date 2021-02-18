@@ -54,6 +54,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //CJ adding Bullet Mechanic Start
+        HandleShootInput();
+        //CJ adding Bullet Mechanic ends
         var horizontal = Input.GetAxisRaw("Horizontal");
         var vertical = Input.GetAxisRaw("Vertical");
         var inputDirection = new Vector3(horizontal, 0f, vertical).normalized;
@@ -81,6 +84,14 @@ public class PlayerController : MonoBehaviour
             } else {
                 _characterController.Move(_direction * _playerSpeed * Time.deltaTime);
             }
+        }
+    }
+
+    private void HandleShootInput()
+    {
+        if(Input.GetButton("Fire1"))
+        {
+            PlayerGun.Instance.Shoot();
         }
     }
 
