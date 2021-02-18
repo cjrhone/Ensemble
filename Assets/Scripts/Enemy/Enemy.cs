@@ -6,7 +6,9 @@ public class Enemy : MonoBehaviour
 {
     //Variables
     public float health;
+    public float pointsToGive;
 
+    public GameObject player;
 
     //Methods
     public void Update()
@@ -21,6 +23,8 @@ public class Enemy : MonoBehaviour
     {
         print("Enemy " + this.gameObject.name + " has died!");
         Destroy(this.gameObject);
+
+        player.GetComponent<PlayerController>().points += pointsToGive;
     }
 
 }

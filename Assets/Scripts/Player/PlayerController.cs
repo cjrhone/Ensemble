@@ -46,6 +46,10 @@ public class PlayerController : MonoBehaviour
     public event Action OnDashAvailable;
     public event Action OnDashUnavailable;
 
+    //Variable for points -- probably should be seperate script but following this tutorial: https://www.youtube.com/watch?v=V6fB7qmyD1A&ab_channel=Sykoo
+    public float points;
+
+
     void Start() {
         _dashAvailable = true; //TODO: make this first intiialization controlled by the Unlocking service and Energy management service
         OnDashAvailable?.Invoke();
@@ -54,9 +58,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //CJ adding Bullet Mechanic Start
         HandleShootInput();
-        //CJ adding Bullet Mechanic ends
         var horizontal = Input.GetAxisRaw("Horizontal");
         var vertical = Input.GetAxisRaw("Vertical");
         var inputDirection = new Vector3(horizontal, 0f, vertical).normalized;
