@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,7 +6,6 @@ public class Enemy : MonoBehaviour
     public float health;
     public float pointsToGive;
 
-    public GameObject player;
     public GameObject bullet;
     public GameObject bulletSpawnPoint;
     private Transform bulletSpawned;
@@ -28,7 +25,7 @@ public class Enemy : MonoBehaviour
             Die();
         }
 
-        this.transform.LookAt(player.transform);
+        this.transform.LookAt(PlayerController.Instance.transform);
 
         if(currentTime == 0)
         {
@@ -52,7 +49,7 @@ public class Enemy : MonoBehaviour
         print("Enemy " + this.gameObject.name + " has died!");
         Destroy(this.gameObject);
 
-        player.GetComponent<PlayerController>().points += pointsToGive;
+        PlayerController.Instance.points += pointsToGive;
     }
 
     public void Shoot()

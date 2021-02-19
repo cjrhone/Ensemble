@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     [Header("Skill Parameters")]
 
     [SerializeField]
+    private PlayerGun _playerGun;
+
+    [SerializeField]
     private float _dashSpeedMultiplier = 3.0f;
 
     [SerializeField]
@@ -45,8 +48,21 @@ public class PlayerController : MonoBehaviour
     public event Action OnDashAvailable;
     public event Action OnDashUnavailable;
 
+    static public PlayerController Instance;
     //Variable for points -- probably should be seperate script but following this tutorial: https://www.youtube.com/watch?v=V6fB7qmyD1A&ab_channel=Sykoo
     public float points;
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else
+        {
+            DestroyImmediate(gameObject);
+        }
+    }
 
     void Start() {
         _dashAvailable = true; //TODO: make this first intiialization controlled by the Unlocking service and Energy management service
@@ -93,7 +109,7 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetButton("Fire1"))
         {
-            PlayerGun.Instance.Shoot();
+            _playerGun.Shoot();
         }
     }
 

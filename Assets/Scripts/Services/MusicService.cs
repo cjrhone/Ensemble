@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MusicService : MonoBehaviour
 {
-    static private MusicService _instance;
+    static public MusicService Instance;
 
     [SerializeField]
     private StudioEventEmitter _studioEventEmitter;
@@ -25,7 +25,19 @@ public class MusicService : MonoBehaviour
 
     private const float onValue = 1.0f;
     private const float offValue = 0.0f;
-    
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else
+        {
+            DestroyImmediate(gameObject);
+        }
+    }
+
     public enum Instruments
     {
         Unknown,

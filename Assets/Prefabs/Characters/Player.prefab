@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 1755290050273059666}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,11 +176,13 @@ MonoBehaviour:
   _characterController: {fileID: 1755290050273059666}
   _playerSpeed: 6
   _turnSmoothTimeSeconds: 0.1
+  _playerGun: {fileID: 900148486}
   _dashSpeedMultiplier: 3
   _dashDurationSeconds: 0.5
   _dashCooldownSeconds: 2
   _gravity: 9.81
   _jumpSpeed: 3.5
+  points: 0
 --- !u!143 &1755290050273059666
 CharacterController:
   m_ObjectHideFlags: 0

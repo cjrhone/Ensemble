@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MusicOrbPowerup : MonoBehaviour
 {
+    [SerializeField]
+    private MusicService.Instruments instrumentType;
+
     // public GameObject pickupEffect;
     void OnTriggerEnter(Collider other)
     {
@@ -21,6 +24,9 @@ public class MusicOrbPowerup : MonoBehaviour
         // Instantiate(pickupEffect, transform.position, transform.rotation);
 
         //Apply effect to player
+
+        //Add Instrument Track to BG
+        MusicService.Instance.TriggerInstrument(instrumentType, true);
 
         //Remove power up object
         Destroy(gameObject);
