@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7578891388871822464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BG/Ensemble
+  m_EditorClassIdentifier: 
+  Path: event:/BG/Ensemble
+  guid: 2919aeae20daec48b56480a2640c48a3
+  Banks:
+  - {fileID: -5825487486647143694}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 53000
 --- !u!114 &-5825487486647143694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +38,50 @@ MonoBehaviour:
   Path: Ensemble_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637489892652222473
+  lastModified: 637492762079229203
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-5416069203826015122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bass
+  m_EditorClassIdentifier: 
+  Name: Bass
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1488707480
+    data2: 1217234169
+  Exists: 1
+--- !u!114 &-2650615594079856104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ensemble/Guitar
+  m_EditorClassIdentifier: 
+  Name: Guitar
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-1806667801453161632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,6 +105,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-59212570673721182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Sax
+  m_EditorClassIdentifier: 
+  Name: Sax
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1485434038
+    data2: 677319174
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,13 +143,39 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -1806667801453161632}
   - {fileID: 3569842493339048182}
-  EditorParameters: []
+  - {fileID: -7578891388871822464}
+  EditorParameters:
+  - {fileID: 8526051382394682352}
+  - {fileID: -59212570673721182}
+  - {fileID: -5416069203826015122}
+  - {fileID: 6960520044038618224}
+  - {fileID: 293260310600182502}
   MasterBanks:
   - {fileID: -5825487486647143694}
   StringsBanks:
   - {fileID: 841487341321743884}
-  stringsBankWriteTime: 637489892652232473
+  stringsBankWriteTime: 637492762079269359
   cacheVersion: 6
+--- !u!114 &293260310600182502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Guitar
+  m_EditorClassIdentifier: 
+  Name: Guitar
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3346368839
+    data2: 2148798301
+  Exists: 1
 --- !u!114 &841487341321743884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,12 +191,32 @@ MonoBehaviour:
   Path: Ensemble_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637489892652232473
+  lastModified: 637492762079269359
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 810
+    Value: 1074
   Exists: 1
+--- !u!114 &1776078418087599317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ensemble/Guitar
+  m_EditorClassIdentifier: 
+  Name: Guitar
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &3569842493339048182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,3 +240,43 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &6960520044038618224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drums
+  m_EditorClassIdentifier: 
+  Name: Drums
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3413008605
+    data2: 813428529
+  Exists: 1
+--- !u!114 &8526051382394682352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Strings
+  m_EditorClassIdentifier: 
+  Name: Strings
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2439740375
+    data2: 3988613246
+  Exists: 1
