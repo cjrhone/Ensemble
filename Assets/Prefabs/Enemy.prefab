@@ -253,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   pointsToGive: 50
-  player: {fileID: 0}
+  player: {fileID: 5500728643287981280, guid: ee44f0c10eaf3854eacbd3e37b8e8ee8, type: 3}
   bullet: {fileID: 4847036502508356166, guid: 033d5d7d0cee89b4ca53f95cf8474637, type: 3}
   bulletSpawnPoint: {fileID: 277602706}
   waitTime: 1
