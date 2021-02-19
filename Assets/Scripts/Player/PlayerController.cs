@@ -41,14 +41,12 @@ public class PlayerController : MonoBehaviour
     private bool _dashAvailable;
     private bool _dashing;
     private float _dashStartTime;
-    private float _turnSmoothVelocity;
 
     public event Action OnDashAvailable;
     public event Action OnDashUnavailable;
 
     //Variable for points -- probably should be seperate script but following this tutorial: https://www.youtube.com/watch?v=V6fB7qmyD1A&ab_channel=Sykoo
     public float points;
-
 
     void Start() {
         _dashAvailable = true; //TODO: make this first intiialization controlled by the Unlocking service and Energy management service

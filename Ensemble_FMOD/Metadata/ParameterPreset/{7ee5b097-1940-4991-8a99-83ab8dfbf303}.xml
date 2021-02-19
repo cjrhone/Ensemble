@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{7ee5b097-1940-4991-8a99-83ab8dfbf303}">
+		<property name="name">
+			<value>Sax</value>
+		</property>
+		<relationship name="folder">
+			<destination>{46863e32-6ac8-44af-8f46-2d433d8fc500}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f40baf4d-80e5-4b66-9cca-999de91eb318}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f40baf4d-80e5-4b66-9cca-999de91eb318}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
