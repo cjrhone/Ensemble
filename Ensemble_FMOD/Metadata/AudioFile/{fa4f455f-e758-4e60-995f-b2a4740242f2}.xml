@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{fa4f455f-e758-4e60-995f-b2a4740242f2}">
+		<property name="assetPath">
+			<value>ensemble Sax.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>52.965510204081632</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2b289d64-efb3-419c-bfe2-6a1535d4f85b}</destination>
+		</relationship>
+	</object>
+</objects>
